@@ -32,6 +32,12 @@
   
 ---
 
+- **Como** Aluno
+- **Quero** ser notificado via email
+- **Para que** eu saiba quando recebi moedas de um professor ou para receber o cupom e o código de uma vantagem que resgatei.
+  
+---
+
 #### Professor
 
 - **Como** Professor
@@ -83,3 +89,9 @@
 - **Como** Empresa parceira
 - **Quero** validar cupom
 - **Para que** eu possa conferir se ele está de acordo com a troca realizada.
+
+---
+
+- **Como** Empresa parceira
+- **Quero** ser notificada via email
+- **Para que** eu receba o código e as informações de uma vantagem resgatada.
