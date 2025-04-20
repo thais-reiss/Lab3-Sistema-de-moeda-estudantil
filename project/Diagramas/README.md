@@ -1,5 +1,11 @@
 ## Histórias de Usuário - Sistema de moeda estudantil
 
+#### Usuário
+
+- **Como** Usuário
+- **Quero** me autenticar no sistema
+- **Para que** eu possa acessar as minhas informações de forma segura e privada.
+
 #### Aluno
 
 - **Como** aluno
