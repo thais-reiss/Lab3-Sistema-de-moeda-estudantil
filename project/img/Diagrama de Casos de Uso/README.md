@@ -7,19 +7,24 @@ actor Professor
 actor "Empresa Parceira" as Empresa
 actor "Instituição de Ensino" as Instituicao
 actor Sistema
+actor Usuário
 
 rectangle "Sistema de Mérito Acadêmico" {
+  Usuário --> (Logar no Sistema)
+
   Aluno --> (Realizar Cadastro)
   Aluno --> (Consultar Extrato)
   Aluno --> (Trocar Moedas)
-  Aluno --> (Receber Notificação)
+  (Distribuir Moedas) --> Aluno
+  Aluno --> Usuário
   
   Professor --> (Distribuir Moedas)
   Professor --> (Consultar Saldo)
-  Professor --> (Receber Notificação)
+  Professor --> Usuário
   
   Empresa --> (Cadastrar Vantagem)
   Empresa --> (Validar Cupom)
+  Empresa --> Usuário
   
   Instituicao --> (Estabelecer Parceria)
   
