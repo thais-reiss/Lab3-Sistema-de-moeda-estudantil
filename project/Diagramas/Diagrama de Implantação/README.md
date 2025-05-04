@@ -21,6 +21,6 @@ browser .. front
 browser .. back
 app_server .. db_server
 user -- app_server : «HTTPS»
-app_server -- db_server : «JDBC»
+app_server -- db_server : «ORM»
 
 @enduml
