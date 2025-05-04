@@ -6,44 +6,41 @@ actor Aluno
 actor Professor
 actor "Empresa Parceira" as Empresa
 actor "Instituição de Ensino" as Instituicao
-actor Sistema
-actor Usuário
+actor "Tempo" as Timer << Relógio >>
 
 rectangle "Sistema de Mérito Acadêmico" {
-  Usuário --> (Logar no Sistema)
-
+  (Realizar Cadastro)
+  (Consultar Extrato)
+  (Trocar Moedas)
+  (Distribuir Moedas)
+  (Cadastrar Vantagem)
+  (Validar Cupom)
+  (Estabelecer Parceria)
+  
+  (Acumular Moedas) as (Acumular)
+  (Enviar Notificação) as (Notificar)
+  
   Aluno --> (Realizar Cadastro)
   Aluno --> (Consultar Extrato)
   Aluno --> (Trocar Moedas)
-  (Distribuir Moedas) --> Aluno
-  Aluno --> Usuário
   
   Professor --> (Distribuir Moedas)
-  Professor --> (Consultar Saldo)
-  Professor --> Usuário
+  Professor --> (Consultar Extrato)
   
   Empresa --> (Cadastrar Vantagem)
   Empresa --> (Validar Cupom)
-  Empresa --> Usuário
   
   Instituicao --> (Estabelecer Parceria)
   
-  Sistema --> (Acumular Moedas)
-  Sistema --> (Enviar Notificação)
-  Sistema --> (Gerenciar Autenticação)
-
+  Timer --> (Acumular) : Mensalmente
+  
   (Realizar Cadastro) .> (Selecionar Instituição) : «include»
   (Distribuir Moedas) .> (Verificar Vínculo) : «include»
-  (Distribuir Moedas) .> (Enviar Notificação) : «extend» 
   (Trocar Moedas) .> (Validar Cupom) : «include»
-  (Estabelecer Parceria) .> (Cadastrar Professores) : «include»
-  (Cadastrar Vantagem) .> (Definir Custo) : «include»
   
-  (Gerenciar Autenticação) <.. (Realizar Cadastro) : «include»
-  (Gerenciar Autenticação) <.. (Distribuir Moedas) : «include»
-  (Gerenciar Autenticação) <.. (Consultar Extrato) : «include»
-  (Gerenciar Autenticação) <.. (Trocar Moedas) : «include»
-  (Gerenciar Autenticação) <.. (Cadastrar Vantagem) : «include»
+  (Acumular) --> (Notificar) : Gera evento
+  (Distribuir Moedas) --> (Notificar)
+  (Trocar Moedas) --> (Notificar)
 }
 
 @enduml
