@@ -9,11 +9,13 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
+@ToString
 public abstract class Usuario {
 
     @Id
