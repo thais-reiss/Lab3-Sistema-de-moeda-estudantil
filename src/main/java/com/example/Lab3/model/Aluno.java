@@ -18,6 +18,21 @@ public class Aluno extends Usuario {
     @Column(unique = true, nullable = false, length = 11)
     private String cpf;
 
+    @Column(nullable = false)
+    private String rg;
+
+    @Column(nullable = false)
+    private String rua;
+
+    @Column(nullable = false)
+    private int numero;
+
+    @Column(nullable = false)
+    private String bairro;
+
+    @Column(nullable = false)
+    private String cep;
+
     @Override
     public String logar(String email, String senha) {
         return this.getEmail().equals(email) && this.getSenha().equals(senha)
