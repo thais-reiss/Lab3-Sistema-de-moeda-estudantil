@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de alunos</title>
-    <link rel="stylesheet" href="consultaalunos.css">
+    <title>Atualizar Empresa</title>
+    <link rel="stylesheet" href="editarempresa.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 </head>
@@ -32,7 +32,7 @@
             </li>
 
             <li class="item-menu">
-                <a href="./consultaalunos.html">
+                <a href="../consulta alunos/consultaalunos.html">
                     <span class="icon"><i class="bi bi-person-fill"></i></span>
                     <span class="txt-link">Alunos</span>
                 </a>
@@ -49,46 +49,38 @@
     </nav>
 
     <div class="titulo">
-        <h1>Alunos cadastrados</h1>
+        <h1>Atualizar Empresa</h1>
     </div>
 
-    <div class="container-tabela">
-    <table class="tabela">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Curso</th>
-                <th>Instituição de Ensino</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>fulano</td>
-                <td>fulano@gmail.com</td>
-                <td>eng</td>
-                <td>puc</td>
-                <td>
-                    <button><span class="icon"><i class="bi bi-pencil-square"></i></span></button>
-                    <button><span class="icon"><i class="bi bi-trash3-fill"></i></span></button>
-                </td>
-            </tr>
+    <div class="principal">
+        <div class="form-container">
+            <form action="">
+                <div class="row">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div>
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="cnpj" id="cnpj" name="cnpj" required>
+                    </div>
+                </div>
 
-            <tr>
-                <td>fulano</td>
-                <td>fulano@gmail.com</td>
-                <td>eng</td>
-                <td>puc</td>
-                <td>
-                    <button><span class="icon"><i class="bi bi-pencil-square"></i></span></button>
-                    <button><span class="icon"><i class="bi bi-trash3-fill"></i></span></button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-    
+                <div class="row">
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                </div>
+
+                <button id="btnCadastrar">Atualizar</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
