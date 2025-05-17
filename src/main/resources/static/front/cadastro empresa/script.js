@@ -28,16 +28,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             if (!resposta.ok) {
-                alert("Não foi possível cadastrar a empresa. Tente novamente, por favor. 😉");
+                alert("Não foi possível cadastrar a empresa. Tente novamente, por favor.😉");
                 return;
             }
 
             const novaEmpresa = await resposta.json();
-            alert(`Empresa ${novaEmpresa.nome} cadastrada com sucesso! 🤩`);
+            alert(`Empresa ${novaEmpresa.nome} cadastrada com sucesso!🤩`);
             form.reset();
+            window.location.href = "../consulta empresas/consultaempresas.html";
         } catch (error) {
             console.error('Erro na requisição:', error);
-            alert("Erro na requisição de cadastro. Tente novamente, por favor 😉");
+            alert("Erro na requisição de cadastro. Tente novamente, por favor.😉");
         }
     });
 });

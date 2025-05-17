@@ -64,16 +64,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             if (!resposta.ok) {
-                alert("Não foi possível cadastrar o aluno. Tente novamente, por favor. 😉");
+                alert("Não foi possível cadastrar o(a) aluno(a). Tente novamente, por favor.😉");
                 return;
             }
 
             const novoAluno = await resposta.json();
-            alert(`Aluno ${novoAluno.nome} cadastrado com sucesso! 🤩`);
+            alert(`Aluno(a) ${novoAluno.nome} cadastrado(a) com sucesso!🤩`);
             form.reset();
+            window.location.href = "../consulta alunos/consultaalunos.html";
         } catch (error) {
             console.error('Erro na requisição:', error);
-            alert("Erro na requisição de cadastro. Tente novamente, por favor 😉");
+            alert("Erro na requisição de cadastro. Tente novamente, por favor.😉");
         }
     });
 });
@@ -99,7 +100,7 @@ function isValidCPF(cpf) {
 function isValidEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regex.test(email)) {
-        alert('O e-mail é inválido. Informe um formato como usuario@email.com.😊');
+        alert('O e-mail é inválido. Informe um formato como aluno@email.com.😊');
         return false;
     }
     return true;
