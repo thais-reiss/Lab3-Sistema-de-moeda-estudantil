@@ -13,6 +13,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Empresa extends Usuario {
+    @Column(nullable = false)
+    private String nome;
 
     @Column(unique = true, nullable = false, length = 14)
     private String cnpj;
@@ -23,6 +25,7 @@ public class Empresa extends Usuario {
     @Override
     public String logar(String email, String senha) {
         return this.getEmail().equals(email) && this.getSenha().equals(senha)
-                ? "Aluno autenticado" : "Falha na autenticação";
+                ? "Aluno autenticado"
+                : "Falha na autenticação";
     }
 }
