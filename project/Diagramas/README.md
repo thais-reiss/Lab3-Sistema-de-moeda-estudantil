@@ -8,19 +8,21 @@
   
 ---
 
-#### Aluno
-
-- **Como** aluno
+- **Como** Usuário
 - **Quero** me cadastrar no sistema
 - **Para que** eu possa acessar as minhas informações e as funcionalidades disponíveis.
   
 ---
 
-- **Como** Aluno
+#### Usuário da Instituição
+
+- **Como** Usuário da Instituição
 - **Quero** consultar o extrato da minha conta
 - **Para que** eu saiba quantas moedas ainda tenho disponíveis.
-
+  
 ---
+
+#### Aluno
 
 - **Como** Aluno
 - **Quero** trocar moedas 
@@ -42,27 +44,7 @@
   
 ---
 
-- **Como** Professor
-- **Quero** consultar o saldo da minha conta
-- **Para que** eu saiba quantas moedas ainda posso distribuir entre os alunos.
-
----
-
-#### Instituição de ensino
-
-- **Como** Instituição de ensino
-- **Quero** cadastrar os professores
-- **Para que** os professores tenham acesso ao sistema.
-  
----
-
 #### Empresa parceira
-
-- **Como** Empresa parceira
-- **Quero** me cadastrar no sistema
-- **Para que** eu possa realizar a parceria e deixar vantagens disponíveis no sistema.
-
----
 
 - **Como** Empresa parceira
 - **Quero** cadastrar vantagem
