@@ -5,19 +5,15 @@
 - **Como** Usuário
 - **Quero** me autenticar no sistema
 - **Para que** eu possa acessar as minhas informações de forma segura e privada.
+  
+---
 
 #### Aluno
 
 - **Como** aluno
 - **Quero** me cadastrar no sistema
 - **Para que** eu possa acessar as minhas informações e as funcionalidades disponíveis.
-   
----
-
-- **Como** Aluno
-- **Quero** selecionar a minha instituição de ensino 
-- **Para que** eu esteja vinculado a ela e possa receber as moedas dos professores.
-
+  
 ---
 
 - **Como** Aluno
@@ -53,12 +49,6 @@
 ---
 
 #### Instituição de ensino
-
-- **Como** Instituição de ensino
-- **Quero** estabelecer a parceria
-- **Para que** os professores e alunos da instituição se beneficiem do sistema.
-
----
 
 - **Como** Instituição de ensino
 - **Quero** cadastrar os professores
