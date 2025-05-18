@@ -2,45 +2,42 @@
 left to right direction
 skinparam packageStyle rectangle
 
+actor Usuario
 actor Aluno
 actor Professor
 actor "Empresa Parceira" as Empresa
-actor "Instituição de Ensino" as Instituicao
-actor "Tempo" as Timer << Relógio >>
+actor "Usuario da Instituição" as UserInst
+
+Usuario  <|-- UserInst
+UserInst  <|-- Aluno
+UserInst  <|-- Professor
+Usuario  <|-- Empresa
 
 rectangle "Sistema de Mérito Acadêmico" {
+  (Realizar Login)
   (Realizar Cadastro)
   (Consultar Extrato)
   (Trocar Moedas)
   (Distribuir Moedas)
   (Cadastrar Vantagem)
   (Validar Cupom)
-  (Estabelecer Parceria)
   
-  (Acumular Moedas) as (Acumular)
   (Enviar Notificação) as (Notificar)
   
-  Aluno --> (Realizar Cadastro)
-  Aluno --> (Consultar Extrato)
+  Usuario --> (Realizar Login)
+  Usuario --> (Realizar Cadastro)
+
+  UserInst --> (Consultar Extrato)
+
   Aluno --> (Trocar Moedas)
   
   Professor --> (Distribuir Moedas)
-  Professor --> (Consultar Extrato)
   
   Empresa --> (Cadastrar Vantagem)
   Empresa --> (Validar Cupom)
   
-  Instituicao --> (Estabelecer Parceria)
-  
-  Timer --> (Acumular) : Mensalmente
-  
-  (Realizar Cadastro) .> (Selecionar Instituição) : «include»
-  (Distribuir Moedas) .> (Verificar Vínculo) : «include»
-  (Trocar Moedas) .> (Validar Cupom) : «include»
-  
-  (Acumular) --> (Notificar) : Gera evento
-  (Distribuir Moedas) --> (Notificar)
-  (Trocar Moedas) --> (Notificar)
+  (Distribuir Moedas) .> (Notificar) : «include»
+  (Trocar Moedas) .> (Notificar) : «include»
 }
 
 @enduml
