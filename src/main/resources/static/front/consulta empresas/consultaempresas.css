@@ -137,21 +137,30 @@ ul li.item-menu a .icon > i {
     transition: all 0.3s;
 }
 
-.tabela button:first-child {
+.tabela button:nth-child(1) {
     color: #2e7d32;
 }
 
-.tabela button:first-child:hover {
+.tabela button:nth-child(1):hover {
     background-color: #2e7d32;
     color: white;
 }
 
-.tabela button:last-child {
+.tabela button:nth-child(2) {
     color: #c62828;
 }
 
-.tabela button:last-child:hover {
+.tabela button:nth-child(2):hover {
     background-color: #c62828;
+    color: white;
+}
+
+.tabela button:nth-child(3) {
+    color: #1976d2;
+}
+
+.tabela button:nth-child(3):hover {
+    background-color: #1976d2;
     color: white;
 }
 
