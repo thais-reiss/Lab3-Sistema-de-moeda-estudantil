@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: rgba(235, 234, 234, 0.97);
+}
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0px 40px 1%;
+    box-shadow: 3px 0 0  #8558c5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .2s;
+}
+
+nav.menu-lateral:hover {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i {
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu:hover {
+    background-color: #8558c5;
+}
+
+ul li.item-menu {
+    transition: .2s;
+    height: 100px;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4px;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link {
+    margin-left: 40px;
+} 
+
+ul li.item-menu a .icon > i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin-top: 70px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px; 
+}
+
+.img-card {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
+}
+
+.card div:not(.img-card) {
+    margin: 10px 0;
+}
+
+.acoes {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; 
+    margin-top: 15px;
+}
+.acoes button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.acoes button .editar, .excluir {
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.editar:hover, .excluir:hover {
+    transform: scale(1.05);
+}
+
+.editar {
+    color: #2e7d32;
+    display: flex;
+}
+
+.editar:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.excluir {
+    color: #c62828;
+}
+
+.excluir:hover {
+    background-color: #c62828;
+    color: white;
+}
+
+.acoes button .icon {
+    font-size: 20px;
+}
+
