@@ -140,3 +140,15 @@ button {
 button:hover {
     background-color: #8558c5;
 }
+
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.dica {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.25rem;
+}

@@ -15,7 +15,7 @@ nav.menu-lateral {
     height: 100%;
     background-color: #202020;
     padding: 40px 0px 40px 1%;
-    box-shadow: 3px 0 0  #8558c5;
+    box-shadow: 3px 0 0 #8558c5;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@ nav.menu-lateral:hover {
     padding-left: 10px;
 }
 
-.btn-expandir > i {
+.btn-expandir>i {
     color: #fff;
     font-size: 24px;
     cursor: pointer;
@@ -64,9 +64,9 @@ ul li.item-menu a {
 
 ul li.item-menu a .txt-link {
     margin-left: 40px;
-} 
+}
 
-ul li.item-menu a .icon > i {
+ul li.item-menu a .icon>i {
     font-size: 30px;
     margin-left: 10px;
 }
@@ -82,14 +82,14 @@ ul li.item-menu a .icon > i {
 .principal {
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
-    min-height: 100vh; 
-    margin: 0; 
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .form-container {
     width: 90%;
-    max-width: 800px; 
+    max-width: 800px;
     background: white;
     padding: 30px;
     border-radius: 8px;
@@ -108,13 +108,15 @@ label {
     font-weight: bold;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     font-size: 1.2rem;
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 4px;
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .row {
@@ -122,8 +124,8 @@ input, select, textarea {
     gap: 20px;
 }
 
-.row > div {
-    flex: 1; 
+.row>div {
+    flex: 1;
 }
 
 button {
@@ -139,4 +141,16 @@ button {
 
 button:hover {
     background-color: #8558c5;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.dica {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
 }

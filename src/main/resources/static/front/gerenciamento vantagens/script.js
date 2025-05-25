@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             card.classList.add('card');
             card.innerHTML = `
         <div class="img-card">
-          <img src="${v.fotoUrl}" alt="Imagem de ${v.nome}" onerror="this.src='../../../img/vantagemPadrao.png'"/>
+          <img src="${v.fotoUrl}" alt="Imagem de ${v.nome}" onerror="this.onerror=null; this.src='../../../../img/vantagemPadrao.png'"/>
         </div>
         <div class="info">
           <p><strong>Nome: </strong>${v.nome}</p>

@@ -5,12 +5,16 @@ import com.example.Lab3.model.Empresa;
 import com.example.Lab3.model.Vantagem;
 import com.example.Lab3.repository.EmpresaRepository;
 import com.example.Lab3.repository.VantagemRepository;
+
+import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/vantagens")
@@ -43,5 +47,63 @@ public class VantagemController {
     @GetMapping
     public List<Vantagem> listarVantagens() {
         return vantagemRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<VantagemDTO> buscarPorId(@PathVariable Long id) {
+        Optional<Vantagem> opt = vantagemRepository.findById(id);
+        if (!opt.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+        Vantagem entidade = opt.get();
+
+        VantagemDTO dto = new VantagemDTO();
+        dto.setNome(entidade.getNome());
+        dto.setDescricao(entidade.getDescricao());
+        dto.setFotoUrl(entidade.getFotoUrl());
+        dto.setCustoMoedas(entidade.getCustoMoedas());
+        dto.setEmpresaId(entidade.getEmpresa().getId());
+
+        return ResponseEntity.ok(dto);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<VantagemDTO> atualizar(
+            @PathVariable Long id,
+            @RequestBody @Valid VantagemDTO dto) {
+
+        return vantagemRepository.findById(id).map(entidade -> {
+            entidade.setNome(dto.getNome());
+            entidade.setDescricao(dto.getDescricao());
+            entidade.setFotoUrl(dto.getFotoUrl());
+            entidade.setCustoMoedas(dto.getCustoMoedas());
+
+            empresaRepository.findById(dto.getEmpresaId())
+                    .ifPresent(entidade::setEmpresa);
+
+            Vantagem salva = vantagemRepository.save(entidade);
+            return ResponseEntity.ok(toDto(salva));
+        })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        return vantagemRepository.findById(id)
+                .map(entidade -> {
+                    vantagemRepository.delete(entidade);
+                    return ResponseEntity.noContent().<Void>build();
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    private VantagemDTO toDto(Vantagem entidade) {
+        VantagemDTO dto = new VantagemDTO();
+        dto.setNome(entidade.getNome());
+        dto.setDescricao(entidade.getDescricao());
+        dto.setFotoUrl(entidade.getFotoUrl());
+        dto.setCustoMoedas(entidade.getCustoMoedas());
+        dto.setEmpresaId(entidade.getEmpresa().getId());
+        return dto;
     }
 }
