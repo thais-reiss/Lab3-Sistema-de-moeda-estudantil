@@ -15,7 +15,7 @@ nav.menu-lateral {
     height: 100%;
     background-color: #202020;
     padding: 40px 0px 40px 1%;
-    box-shadow: 3px 0 0  #8558c5;
+    box-shadow: 3px 0 0 #8558c5;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@ nav.menu-lateral:hover {
     padding-left: 10px;
 }
 
-.btn-expandir > i {
+.btn-expandir>i {
     color: #fff;
     font-size: 24px;
     cursor: pointer;
@@ -64,9 +64,9 @@ ul li.item-menu a {
 
 ul li.item-menu a .txt-link {
     margin-left: 40px;
-} 
+}
 
-ul li.item-menu a .icon > i {
+ul li.item-menu a .icon>i {
     font-size: 30px;
     margin-left: 10px;
 }
@@ -81,10 +81,10 @@ ul li.item-menu a .icon > i {
 
 .card-container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px;
     margin-left: 100px;
     padding: 20px;
 }
@@ -92,12 +92,12 @@ ul li.item-menu a .icon > i {
 .card {
     display: flex;
     flex-direction: column;
-    width: 300px; 
+    width: 300px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .img-card {
@@ -110,8 +110,8 @@ ul li.item-menu a .icon > i {
 
 .img-card img {
     width: 100%;
-    height: 100%; 
-    object-fit: cover; 
+    height: 100%;
+    object-fit: cover;
     object-position: center;
 }
 
@@ -122,9 +122,10 @@ ul li.item-menu a .icon > i {
 .acoes {
     display: flex;
     justify-content: flex-start;
-    gap: 10px; 
+    gap: 10px;
     margin-top: 15px;
 }
+
 .acoes button {
     border: none;
     background: none;
@@ -136,14 +137,16 @@ ul li.item-menu a .icon > i {
     font-size: 16px;
 }
 
-.acoes button .editar, .excluir {
+.acoes button .editar,
+.excluir {
     font-size: 20px;
     align-items: center;
     justify-content: center;
 }
 
 
-.editar:hover, .excluir:hover {
+.editar:hover,
+.excluir:hover {
     transform: scale(1.05);
 }
 
@@ -205,4 +208,17 @@ ul li.item-menu a .icon > i {
 
 .btn-cadastrar i {
     font-size: 18px;
+}
+
+.empty-message {
+  text-align: center;    
+  width: 100%;           
+}
+
+.empty-message #joinha {
+  display: inline-block; 
+  max-width: 300px;
+  width: 80%;           
+  height: auto;
+  margin-top: 2rem;
 }

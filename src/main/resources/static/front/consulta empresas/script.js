@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="btn-excluir" data-id="${empresa.id}">
               <span class="icon"><i class="bi bi-trash3-fill"></i></span>
             </button>
+            <button class="btn-vantagem" data-id="${empresa.id}">
+                <span class="icon"><i class="bi bi-check-circle-fill"></i></span>
+            </button>
           </td>
         `;
                 tbody.appendChild(tr);
@@ -44,6 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             alert("Empresa excluída com sucesso!😉");
                         })
                         .catch(() => alert("Não foi possível excluir a empresa. Tente novamente, por favor.😉"));
+                });
+            });
+            tbody.querySelectorAll('.btn-vantagem').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const empresaId = btn.dataset.id;
+                    localStorage.setItem("idEmpresa", empresaId);
+                    window.location.href = "../gerenciamento vantagens/vantagem.html";
                 });
             });
         })
