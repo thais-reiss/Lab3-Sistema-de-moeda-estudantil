@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const novaVantagem = await resposta.json();
             alert(`Vantagem ${novaVantagem.nome} cadastrada com sucesso!🤩`);
             form.reset();
-            window.location.href = "../consultar vantagens/consultar.html";
+            window.location.href = "../gerenciamento vantagens/vantagem.html";
         } catch (error) {
             console.error('Erro na requisição:', error);
             alert("Erro na requisição de cadastro. Tente novamente, por favor.😉");
