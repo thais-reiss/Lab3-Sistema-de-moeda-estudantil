@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,15 +34,16 @@ public class Aluno extends Usuario {
     @Column(nullable = false)
     private String cep;
 
-    @Override
-    public String logar(String email, String senha) {
-        return this.getEmail().equals(email) && this.getSenha().equals(senha)
-                ? "Aluno autenticado" : "Falha na autenticação";
-    }
-
     @ManyToOne
     @JoinColumn(name = "instituicao_id", nullable = false)
     private InstituicaoEnsino instituicao;
     private String curso;
     private int saldoMoedas;
+
+    @PrePersist
+    public void prePersist() {
+        if (this.role == null) {
+            this.role = "ALUNO";
+        }
+    }
 }

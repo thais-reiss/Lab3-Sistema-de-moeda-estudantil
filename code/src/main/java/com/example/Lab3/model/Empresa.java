@@ -1,13 +1,12 @@
 package com.example.Lab3.model;
 
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,10 +25,10 @@ public class Empresa extends Usuario {
     @JsonIgnore
     private List<Vantagem> vantagens;
 
-    @Override
-    public String logar(String email, String senha) {
-        return this.getEmail().equals(email) && this.getSenha().equals(senha)
-                ? "Empresa autenticado"
-                : "Falha na autenticação";
+    @PrePersist
+    public void prePersist() {
+        if (this.role == null) {
+            this.role = "EMPRESA";
+        }
     }
 }
