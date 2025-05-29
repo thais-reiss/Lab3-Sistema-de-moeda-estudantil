@@ -1,5 +1,7 @@
 package com.example.Lab3.model;
 
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,20 +9,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import java.util.Collection;
-import java.util.Collections;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Getter
-@Setter
-@ToString
-public abstract class Usuario implements UserDetails { // Implementa UserDetails
+public abstract class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,40 +25,67 @@ public abstract class Usuario implements UserDetails { // Implementa UserDetails
     private String senha;
 
     @Column(nullable = false)
-    private String role;
+    protected String role;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_" + role));
+    // Getters e Setters
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public String getPassword() {
-        return senha;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @Override
-    public String getUsername() {
+    public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    // toString
     @Override
-    public boolean isAccountNonExpired() {
-        return true;
+    public String toString() {
+        return "Usuario{"
+                + "id=" + id
+                + ", email='" + email + '\''
+                + ", senha='" + senha + '\''
+                + ", role='" + role + '\''
+                + '}';
+    }
+
+    // Equals e hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(id, usuario.id);
     }
 
     @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

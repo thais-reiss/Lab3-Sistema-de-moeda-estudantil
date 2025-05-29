@@ -1,9 +1,10 @@
 package com.example.Lab3.repository;
 
-import com.example.Lab3.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
-import java.util.Optional;
+
+import com.example.Lab3.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-    Optional<Usuario> findByEmail(String email); 
+
+    Usuario findByEmail(String email);
 }

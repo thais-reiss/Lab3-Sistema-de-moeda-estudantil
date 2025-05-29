@@ -1,18 +1,16 @@
 package com.example.Lab3.model;
 
 import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 public class Empresa extends Usuario {
 
     @Column(nullable = false)
@@ -25,10 +23,35 @@ public class Empresa extends Usuario {
     @JsonIgnore
     private List<Vantagem> vantagens;
 
+    // Getters e Setters 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public List<Vantagem> getVantagens() {
+        return vantagens;
+    }
+
+    public void setVantagens(List<Vantagem> vantagens) {
+        this.vantagens = vantagens;
+    }
+
     @PrePersist
     public void prePersist() {
-        if (this.role == null) {
-            this.role = "EMPRESA";
+        if (this.getRole() == null) {
+            this.setRole("EMPRESA");
         }
     }
 }
