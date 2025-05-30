@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const novoAluno = await resposta.json();
             alert(`Aluno(a) ${novoAluno.nome} cadastrado(a) com sucesso!🤩`);
             form.reset();
-            window.location.href = "../consulta alunos/consultaalunos.html";
+            window.location.href = "../consulta alunos/consultaalunos.html"; // vai ter que mudar para onde vai
         } catch (error) {
             console.error('Erro na requisição:', error);
             alert("Erro na requisição de cadastro. Tente novamente, por favor.😉");

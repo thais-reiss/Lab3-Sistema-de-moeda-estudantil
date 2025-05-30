@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.principal {
+  display: flex;          /* Ativa o flexbox */
+  align-items: center;    /* Alinha verticalmente ao centro */
+  gap: 2rem;              /* Espaço entre a imagem e o formulário */
+  padding: 1rem;          /* Espaçamento interno opcional */
+}
+
+.img {
+  flex: 1;                /* Ocupa parte do espaço disponível */
+  max-width: 50%;         /* Limita a largura máxima */
+}
+
+.img img {
+  width: 100%;            /* Faz a imagem preencher o container */
+  height: auto;           /* Mantém a proporção */
+  border-radius: 8px;     /* Opcional: bordas arredondadas */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Isso fará os elementos ficarem um abaixo do outro */
+    gap: 1rem; /* Espaço entre os elementos do formulário */
+}
+
+label {
+    display: block; /* Garante que a label fique acima do input */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.botoes-container {
+    width: 500px;
+    margin-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 85px; /* Aumentei o padding para melhor visualização com a sombra */
+    border-radius: 10px; /* Bordas arredondadas para combinar com a sombra */
+    background-color: white; /* Fundo branco para o container */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adicionei a sombra aqui */
+}
+
+.titulo {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.botoes-container button {
+    width: 528px;
+    padding: 15px;
+    font-size: 20px;
+    background-color: #6a00ff;
+    border-radius: 5px;
+    border: none;
+    color:white;
+    margin-bottom: 20px ;
+}
+
+.botoes-container button:hover {
+    cursor: pointer;
+    background-color: rgb(143, 150, 248); ;
+}

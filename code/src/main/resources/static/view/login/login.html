@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="principal">
+        <div class="img">
+            <img src="../../imgs/login.svg" alt="Users">
+        </div>
+
+        <div class="login-container">
+            <div class="titulo">
+                <h1><strong>Login</strong></h1>
+            </div>
+            <form>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha">
+
+                 <label for="usuario">Usuário:</label>
+                 <select id="usuario" name="usuario">
+                        <option value="Selecione uma opção" disabled selected>Selecione uma opção</option>
+                        <option value="aluno">Aluno</option>
+                        <option value="empresa">Empresa</option>
+                        <option value="professor">Professor</option>
+                 </select>
+
+                 <button>Entrar</button>
+                 <p>Não possui conta? <a href=""> Cadastre-se</a></p>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

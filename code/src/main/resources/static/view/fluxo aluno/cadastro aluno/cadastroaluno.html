@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="menu-lateral">
+    <!-- <nav class="menu-lateral">
         <div class="btn-expandir">
             <i class="bi bi-list"></i>
         </div>
@@ -46,72 +46,82 @@
             </li>
 
         </ul>
-    </nav>
-
-    <div class="titulo">
-        <h1>Cadastro de Aluno</h1>
-    </div>
+    </nav>-->
 
     <div class="principal">
+
+        <div class="img">
+            <img src="../../../imgs/alunos.svg" alt="Users">
+        </div>
+
         <div class="form-container">
+            <div class="titulo">
+                <h1><strong>Cadastre-se</strong></h1>
+            </div>
             <form action="" id="formAluno">
                 <div class="row">
-                    <div>
+                    <div class="div-input">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required>
                     </div>
-                    <div>
+                </div>
+
+                  <div class="row">
+                    <div class="div-input">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div>
+                    <div  class="div-input">
                         <label for="cpf">CPF:</label>
                         <input type="text" id="cpf" name="cpf" required>
                     </div>
-                    <div>
+                    <div  class="div-input">
                         <label for="rg">RG:</label>
                         <input type="text" id="rg" name="rg" required>
-                        <small class="dica">RG deve ter pelo menos 7 caracteres (letras/números).</small>
+                        <small class="dica">RG deve ter pelo menos 7 caracteres.</small>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div>
+                    <div  class="div-input">
                         <label for="senha">Senha:</label>
                         <input type="password" id="senha" name="senha" required>
                         <small class="dica">A senha deve ter pelo menos 4 caracteres.</small>
                     </div>
 
-                    <div>
+                    <div  class="div-input">
                         <label for="curso">Curso:</label>
                         <input type="text" id="curso" name="curso" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div>
+                    <div  class="div-input">
                         <label for="rua">Rua:</label>
                         <input type="text" id="rua" name="rua" required>
                     </div>
-                    <div>
+                    <div  class="div-input">
                         <label for="bairro">Bairro:</label>
                         <input type="text" id="bairro" name="bairro" required>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div>
+                    <div  class="div-input">
                         <label for="cep">CEP:</label>
                         <input type="number" id="cep" name="cep" required>
                     </div>
-                    <div>
+                    <div  class="div-input">
                         <label for="numero">Número:</label>
                         <input type="number" id="numero" name="numero" required>
                     </div>
-                    <div>
+                </div>
+
+                  <div class="row">
+                    <div  class="div-input">
                         <label for="instituicao">Instituição de ensino:</label>
                         <select id="instituicao" name="instituicao">
                             <!--<option value="PUC Minas">PUC Minas</option>
