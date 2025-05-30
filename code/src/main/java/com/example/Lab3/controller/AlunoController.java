@@ -56,13 +56,19 @@ public class AlunoController {
                     alunoExistente.setEmail(dados.getEmail());
                     alunoExistente.setCpf(dados.getCpf());
                     alunoExistente.setRg(dados.getRg());
-                    alunoExistente.setSenha(dados.getSenha());
+
+                    if (dados.getSenha() != null && !dados.getSenha().isEmpty()) {
+                        alunoExistente.setSenha(dados.getSenha());
+                    }
+
                     alunoExistente.setCurso(dados.getCurso());
                     alunoExistente.setRua(dados.getRua());
                     alunoExistente.setNumero(dados.getNumero());
                     alunoExistente.setBairro(dados.getBairro());
                     alunoExistente.setCep(dados.getCep());
                     alunoExistente.setInstituicao(dados.getInstituicao());
+                    alunoExistente.setSaldoMoedas(dados.getSaldoMoedas());
+
                     Aluno atualizado = alunoRepository.save(alunoExistente);
                     return ResponseEntity.ok(atualizado);
                 })

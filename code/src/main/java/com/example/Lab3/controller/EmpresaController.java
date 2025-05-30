@@ -4,7 +4,6 @@ import com.example.Lab3.model.Empresa;
 import com.example.Lab3.repository.EmpresaRepository;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -45,9 +44,14 @@ public class EmpresaController {
         return empresaRepository.findById(id)
                 .map(empresaExistente -> {
                     empresaExistente.setEmail(dados.getEmail());
-                    empresaExistente.setSenha(dados.getSenha());
+
+                    if (dados.getSenha() != null && !dados.getSenha().isEmpty()) {
+                        empresaExistente.setSenha(dados.getSenha());
+                    }
+
                     empresaExistente.setNome(dados.getNome());
                     empresaExistente.setCnpj(dados.getCnpj());
+
                     Empresa atualizada = empresaRepository.save(empresaExistente);
                     return ResponseEntity.ok(atualizada);
                 })

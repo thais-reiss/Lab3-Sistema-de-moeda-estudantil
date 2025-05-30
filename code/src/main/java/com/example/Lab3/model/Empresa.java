@@ -8,12 +8,9 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.PrePersist;
 
 @Entity
-@Getter
-@Setter
 public class Empresa extends Usuario {
 
     @Column(nullable = false)
@@ -26,10 +23,35 @@ public class Empresa extends Usuario {
     @JsonIgnore
     private List<Vantagem> vantagens;
 
-    @Override
-    public String logar(String email, String senha) {
-        return this.getEmail().equals(email) && this.getSenha().equals(senha)
-                ? "Empresa autenticado"
-                : "Falha na autenticação";
+    // Getters e Setters 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public List<Vantagem> getVantagens() {
+        return vantagens;
+    }
+
+    public void setVantagens(List<Vantagem> vantagens) {
+        this.vantagens = vantagens;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (this.getRole() == null) {
+            this.setRole("EMPRESA");
+        }
     }
 }
