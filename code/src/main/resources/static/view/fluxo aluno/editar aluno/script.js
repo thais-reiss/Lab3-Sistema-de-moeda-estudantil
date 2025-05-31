@@ -1,6 +1,7 @@
 const btn = document.getElementById("btnAtualizar");
 const idAluno = localStorage.getItem("idAluno");
 const select = document.getElementById('instituicao');
+let saldoAnteriorDoAluno = 0;
 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -11,6 +12,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             return;
         }
         const aluno = await response.json();
+        saldoAnteriorDoAluno = aluno.saldoMoedas || 0;
 
         const respInst = await fetch('http://localhost:8080/instituicoes');
         if (!respInst.ok) throw new Error('Falha ao carregar instituições');
@@ -30,7 +32,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('cpf').value = aluno.cpf || "";
         document.getElementById('email').value = aluno.email || "";
         document.getElementById('rg').value = aluno.rg || "";
-        //document.getElementById('senha').value = aluno.senha || "";
+        document.getElementById('senha').value = aluno.senha || "";
         document.getElementById('curso').value = aluno.curso || "";
         document.getElementById('rua').value = aluno.rua || "";
         document.getElementById('bairro').value = aluno.bairro || "";
@@ -78,7 +80,7 @@ form.addEventListener('submit', async (ev) => {
         bairro: bairro,
         cep: cep,
         numero: numero,
-        saldoMoedas: 0,
+        saldoMoedas: saldoAnteriorDoAluno,
         instituicao: {
             id: Number(select.value)
         }

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const select = document.getElementById('empresa');
+    const idEmpresa = Number(localStorage.getItem('idEmpresa'));
 
+    /*const select = document.getElementById('empresa');
     fetch('http://localhost:8080/empresas')
         .then(res => res.json())
         .then(data => {
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 select.appendChild(option);
             });
         })
-        .catch(err => console.error('Erro ao carregar empresas:', err));
+        .catch(err => console.error('Erro ao carregar empresas:', err)); */
 
     const form = document.querySelector('form');
     form.addEventListener('submit', async (event) => {
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             descricao: descricao,
             fotoUrl: foto,
             custoMoedas: custo,
-            empresaId: Number(select.value)
+            empresaId: idEmpresa
         };
 
         try {

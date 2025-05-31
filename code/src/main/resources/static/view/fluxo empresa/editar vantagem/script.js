@@ -1,6 +1,7 @@
 const btn = document.getElementById("btnAtualizar");
 const idVantagem = localStorage.getItem("idVantagem");
-const select = document.getElementById('empresa');
+const idEmpresa = Number(localStorage.getItem('idEmpresa'));
+//const select = document.getElementById('empresa');
 
 window.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -12,7 +13,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         }
         const vantagem = await response.json();
 
-        const respEmpresa = await fetch('http://localhost:8080/empresas');
+        /*const respEmpresa = await fetch('http://localhost:8080/empresas');
         if (!respEmpresa.ok) throw new Error('Falha ao carregar empresas.');
         const empresas = await respEmpresa.json();
 
@@ -24,7 +25,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 option.selected = true;
             }
             select.appendChild(option);
-        });
+        });*/
 
         document.getElementById('nome').value = vantagem.nome || "";
         document.getElementById('custo').value = vantagem.custoMoedas || "";
@@ -54,7 +55,7 @@ form.addEventListener('submit', async (event) => {
         descricao: descricao,
         fotoUrl: foto,
         custoMoedas: custo,
-        empresaId: Number(select.value)
+        empresaId: idEmpresa
     };
 
     try {
