@@ -19,27 +19,27 @@
             <div class="titulo">
                 <h1><strong>Login</strong></h1>
             </div>
-            <form>
+            <form id="loginForm">
                 <label for="email">Email:</label>
                 <input type="text" name="email" id="email">
 
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha">
 
-                 <label for="usuario">Usuário:</label>
-                 <select id="usuario" name="usuario">
-                        <option value="Selecione uma opção" disabled selected>Selecione uma opção</option>
-                        <option value="aluno">Aluno</option>
-                        <option value="empresa">Empresa</option>
-                        <option value="professor">Professor</option>
-                 </select>
+                <label for="usuario">Usuário:</label>
+                <select id="usuario" name="usuario">
+                    <option value="Selecione uma opção" disabled selected>Selecione uma opção</option>
+                    <option value="aluno">Aluno</option>
+                    <option value="empresa">Empresa</option>
+                    <option value="professor">Professor</option>
+                </select>
 
-                 <button>Entrar</button>
-                 <p>Não possui conta? <a href=""> Cadastre-se</a></p>
+                <button type="submit">Entrar</button>
+                <p>Não possui conta? <a href="../usuarios/usuarios.html"> Cadastre-se</a></p>
             </form>
         </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ public class LoginDTO {
 
     private String email;
     private String senha;
+    private String role;
 
     public String getEmail() {
         return email;
@@ -19,5 +20,13 @@ public class LoginDTO {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         cardContainer.innerHTML = '';
         if (minhasVantagens.length === 0) {
-            cardContainer.innerHTML = ' <div class="empty-message"><p>Nenhuma vantagem encontrada para esta empresa. Cadastre alguma.😉</p> <img src="../../../../img/joinha.png" id="joinha"></div>';
+            cardContainer.innerHTML = ' <div class="empty-message"><p>Nenhuma vantagem encontrada para esta empresa. Cadastre alguma.😉</p> <img src="../../../imgs/joinha.png" id="joinha"></div>';
             return;
         }
 
@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             card.classList.add('card');
             card.innerHTML = `
         <div class="img-card">
-          <img src="${v.fotoUrl}" alt="Imagem de ${v.nome}" onerror="this.onerror=null; this.src='../../../../img/vantagemPadrao.png'"/>
+          <img src="${v.fotoUrl}" alt="Imagem de ${v.nome}" onerror="this.onerror=null; this.src='../../../imgs/vantagemPadrao.png'"/>
         </div>
         <div class="info">
           <p><strong>Nome: </strong>${v.nome}</p>
