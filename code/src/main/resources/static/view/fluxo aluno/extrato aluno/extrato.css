@@ -89,7 +89,7 @@ ul li.item-menu a .icon > i {
     border-radius: 8px;
 }
 
-.form-container {
+.extrato-container {
     width: 700px;
     margin-left: 50px;
     margin-top: 30px;
@@ -100,57 +100,48 @@ ul li.item-menu a .icon > i {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.row {
-    display: flex;
-    gap: 2rem;
-}
-
-.row > div {
-    flex: 1;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.form-container input,
-.form-container select,
-.form-container button {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.div-input {
-    margin-bottom: 15px;
-    flex: 1;
-}
-
 .titulo {
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
 }
+ .extrato-info p {
+    font-size: 1.1rem;
+ }
 
-.form-container button {
-    background-color: #6a00ff;
+ .saldo-final hr {
     border: none;
-    color: white;
-    border-radius: 5px;
-    font-size: 20px;
-}
+    border-top: 1px solid #ccc;
+    margin-bottom: 10px;
+ }
 
-.form-container button:hover {
-    cursor: pointer;
-    background-color: rgb(143, 150, 248);
+ .saldo-final p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+ }
+
+ .linha-extrato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+ }
+
+ .linha-extrato i {
+    font-size: 1.4rem;
+    margin-right: 10px;
+ }
+
+ .icone-recebido {
+    color: green;
+ }
+
+ .icone-gasto {
+    color: red;
+ }
+
+ 
+.icone-saldo {
+    color: #b6aa00; 
 }

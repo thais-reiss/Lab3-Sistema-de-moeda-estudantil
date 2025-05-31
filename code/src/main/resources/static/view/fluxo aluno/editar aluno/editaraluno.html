@@ -15,51 +15,66 @@
         <div class="btn-expandir">
             <i class="bi bi-list"></i>
         </div>
-
-        <ul>
+ <ul>
             <li class="item-menu">
-                <a href="../cadastro aluno/cadastroaluno.html">
-                    <span class="icon"><i class="bi bi-person-fill-add"></i></span>
-                    <span class="txt-link">Cadastro alunos</span>
+                <a href="../home/home.html">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Home</span>
                 </a>
             </li>
 
             <li class="item-menu">
-                <a href="../cadastro empresa/cadastroempresa.html">
-                    <span class="icon"><i class="bi bi-building-fill-add"></i></span>
-                    <span class="txt-link">Cadastro empresas</span>
-                </a>
-            </li>
-
-            <li class="item-menu">
-                <a href="../consulta alunos/consultaalunos.html">
+                <a href="../perfil aluno/perfil.html">
                     <span class="icon"><i class="bi bi-person-fill"></i></span>
-                    <span class="txt-link">Alunos</span>
+                    <span class="txt-link">Perfil</span>
                 </a>
             </li>
 
             <li class="item-menu">
-                <a href="../consulta empresas/consultaempresas.html">
-                    <span class="icon"><i class="bi bi-building"></i></span>
-                    <span class="txt-link">Empresas</span>
+                <a href="../extrato aluno/extrato.html">
+                    <span class="icon"><i class="bi bi-receipt"></i></span>
+                    <span class="txt-link">Extrato</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="../consultar vantagens/consultar.html">
+                    <span class="icon"><i class="bi bi-check-circle-fill"></i></span>
+                    <span class="txt-link">Vantagens</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="../../login/login.html">
+                    <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+                    <span class="txt-link">Sair</span>
                 </a>
             </li>
 
         </ul>
     </nav>
 
-    <div class="titulo">
-        <h1>Atualizar Aluno</h1>
-    </div>
+
 
     <div class="principal">
+
+        <div class="img">
+            <img src="../../../imgs/editar aluno.svg" alt="Users">
+        </div>
+
         <div class="form-container">
+            <div class="titulo">
+                <h1>Atualize seus dados</h1>
+            </div>
             <form action="" id="formAluno">
                 <div class="row">
                     <div>
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required>
                     </div>
+                </div>
+
+                <div class="row">
                     <div>
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
@@ -111,6 +126,9 @@
                         <label for="numero">Número:</label>
                         <input type="number" id="numero" name="numero" required>
                     </div>
+                </div>
+
+                 <div class="row">
                     <div>
                         <label for="instituicao">Instituição de ensino:</label>
                         <select id="instituicao" name="instituicao">
