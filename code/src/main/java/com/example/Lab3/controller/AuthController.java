@@ -26,16 +26,17 @@ public class AuthController {
         Usuario usuario = usuarioRepository.findByEmail(loginDTO.getEmail());
 
         if (usuario == null || !usuario.getSenha().equals(loginDTO.getSenha())) {
-            return ResponseEntity.status(401).body("Email ou senha incorretos");
-        }
-
-        String roleEnviado = loginDTO.getRole();
-        String roleBanco = usuario.getRole();
-
-        if (roleEnviado == null || !roleEnviado.equalsIgnoreCase(roleBanco)) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body("Tipo de usuário selecionado incorreto");
+                    .body("Email ou senha incorretos");
         }
+
+        String roleLogin = loginDTO.getRole();
+        String roleBanco = usuario.getRole(); 
+        if (roleLogin == null || !roleLogin.equalsIgnoreCase(roleBanco)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Tipo de usuário incorreto para este usuário");
+        }
+
         return ResponseEntity.ok(usuario);
     }
 }

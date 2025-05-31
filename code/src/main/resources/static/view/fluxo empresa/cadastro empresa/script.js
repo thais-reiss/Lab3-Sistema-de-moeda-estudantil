@@ -33,9 +33,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             const novaEmpresa = await resposta.json();
+            localStorage.setItem('idEmpresa', novaEmpresa.id);
             alert(`Empresa ${novaEmpresa.nome} cadastrada com sucesso!🤩`);
             form.reset();
-            window.location.href = "../consulta empresas/consultaempresas.html";
+            window.location.href = "../gerenciamento vantagens/vantagem.html";
         } catch (error) {
             console.error('Erro na requisição:', error);
             alert("Erro na requisição de cadastro. Tente novamente, por favor.😉");

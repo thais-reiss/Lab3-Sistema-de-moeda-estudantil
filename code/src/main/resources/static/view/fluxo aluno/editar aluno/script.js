@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('cpf').value = aluno.cpf || "";
         document.getElementById('email').value = aluno.email || "";
         document.getElementById('rg').value = aluno.rg || "";
-        document.getElementById('senha').value = aluno.senha || "";
+        //document.getElementById('senha').value = aluno.senha || "";
         document.getElementById('curso').value = aluno.curso || "";
         document.getElementById('rua').value = aluno.rua || "";
         document.getElementById('bairro').value = aluno.bairro || "";
@@ -99,7 +99,7 @@ form.addEventListener('submit', async (ev) => {
         const alunoAtualizado = await resposta.json();
         alert(`Aluno(a) ${alunoAtualizado.nome} atualizado(a) com sucesso!🤩`);
         form.reset();
-        window.location.href = "../consulta alunos/consultaalunos.html";
+        window.location.href = "../perfil aluno/perfil.html";
     } catch (error) {
         alert("Erro na requisição de atualização. Tente novamente, por favor.😉");
     }

@@ -22,13 +22,17 @@ form.addEventListener('submit', function (event) {
         .then(async response => {
             if (response.ok) {
                 const usuarioLogado = await response.json();
+                console.log("JSON que veio do /auth/login:", usuarioLogado);
                 alert('Login bem‑sucedido!🎉 Bem vindo(a)!');
 
                 if (usuarioLogado.role === 'ALUNO') {
+                    localStorage.setItem('idAluno', usuarioLogado.id);
                     window.location.href = '../fluxo aluno/extrato aluno/extrato.html';
                 } else if (usuarioLogado.role === 'EMPRESA') {
+                     localStorage.setItem('idEmpresa', usuarioLogado.id);
                     window.location.href = '../fluxo empresa/gerenciamento vantagens/vantagem.html';
                 } else if (usuarioLogado.role === 'PROFESSOR') {
+                    localStorage.setItem('idProfessor', usuarioLogado.id);
                     window.location.href = '../fluxo professor/extrato/extrato.html';
                 }
             } else if (response.status === 401) {

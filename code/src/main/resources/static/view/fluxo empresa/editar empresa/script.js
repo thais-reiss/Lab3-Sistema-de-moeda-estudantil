@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('nome').value = empresa.nome || "";
         document.getElementById('cnpj').value = empresa.cnpj || "";
         document.getElementById('email').value = empresa.email || "";
-        document.getElementById('senha').value = empresa.senha || "";
+        //document.getElementById('senha').value = empresa.senha || ""; Não retorna senha
     } catch (error) {
         alert("Sinto muito. Houve um erro ao carregar os dados da empresa. Tente novamente.😉");
     }
