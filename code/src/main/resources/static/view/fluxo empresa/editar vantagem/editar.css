@@ -15,12 +15,12 @@ nav.menu-lateral {
     height: 100%;
     background-color: #202020;
     padding: 40px 0px 40px 1%;
-    box-shadow: 3px 0 0  #8558c5;
+    box-shadow: 3px 0 0 #8558c5;
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 nav.menu-lateral:hover {
@@ -48,7 +48,7 @@ ul li.item-menu:hover {
 }
 
 ul li.item-menu {
-    transition: .2s;
+    transition: 0.2s;
     height: 100px;
 }
 
@@ -64,91 +64,94 @@ ul li.item-menu a {
 
 ul li.item-menu a .txt-link {
     margin-left: 40px;
-} 
+}
 
 ul li.item-menu a .icon > i {
     font-size: 30px;
     margin-left: 10px;
 }
 
-.titulo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    margin-top: 50px;
-}
-
 .principal {
     display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    min-height: 100vh; 
-    margin: 0; 
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.img {
+    flex: 1;
+    max-width: 50%;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .form-container {
-    width: 90%;
-    max-width: 800px; 
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-right: 20px;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input, select, textarea {
-    font-size: 1.2rem;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box; 
+    gap: 1rem;
 }
 
 .row {
     display: flex;
-    gap: 20px;
+    gap: 2rem;
 }
 
 .row > div {
-    flex: 1; 
+    flex: 1;
 }
 
-button {
-    padding: 12px 20px;
-    background-color: #202020;
-    color: white;
-    border: none;
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-container input,
+.form-container select,
+.form-container button,
+.form-container textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.div-input {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.titulo {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container button {
+    background-color: #6a00ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.form-container button:hover {
     cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #8558c5;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.dica {
-  display: block;
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 0.25rem;
+    background-color: rgb(143, 150, 248);
 }
