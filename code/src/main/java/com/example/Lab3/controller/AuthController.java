@@ -1,5 +1,6 @@
 package com.example.Lab3.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +29,13 @@ public class AuthController {
             return ResponseEntity.status(401).body("Email ou senha incorretos");
         }
 
+        String roleEnviado = loginDTO.getRole();
+        String roleBanco = usuario.getRole();
+
+        if (roleEnviado == null || !roleEnviado.equalsIgnoreCase(roleBanco)) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Tipo de usuário selecionado incorreto");
+        }
         return ResponseEntity.ok(usuario);
     }
 }
