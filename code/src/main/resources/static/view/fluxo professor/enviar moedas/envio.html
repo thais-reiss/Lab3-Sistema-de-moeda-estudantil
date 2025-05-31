@@ -79,15 +79,19 @@
         </table>
     </div>
 
-    <div id="modal-envio" class="modal">
-        <div class="conteudo-modal">
-            <button class="btn-fechar" onclick="fecharmodal()"><span><i class="bi bi-x"></i></span></button>
-            <h2>Envio de moedas</h2>
-            <p>Digite o valor que deseja enviar:</p>
-            <input type="number" id="valor-moedas" placeholder="Ex: 100" min="1">
-            <button class="btn-enviar" id="confirmar-envio" onclick="fecharmodal()">Enviar</button>
-        </div>
+   <div id="modal-envio" class="modal">
+    <div class="conteudo-modal">
+        <button class="btn-fechar" onclick="fecharmodal()"><span><i class="bi bi-x"></i></span></button>
+        <h2>Envio de moedas</h2>
+        <p>Digite o valor que deseja enviar:</p>
+        <input type="number" id="valor-moedas" placeholder="Ex: 100" min="1">
+
+        <p>Motivo do envio:</p>
+        <textarea id="motivo-envio" placeholder="Descreva o motivo do envio..." rows="4"></textarea>
+
+        <button class="btn-enviar" id="confirmar-envio" onclick="fecharmodal()">Enviar</button>
     </div>
+</div>
 
     <script src="script.js"></script>
 </body>

@@ -239,4 +239,14 @@ ul li.item-menu a .icon > i {
     margin-bottom: 10px;
 }
 
+.conteudo-modal textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 14px;
+}
+
 
