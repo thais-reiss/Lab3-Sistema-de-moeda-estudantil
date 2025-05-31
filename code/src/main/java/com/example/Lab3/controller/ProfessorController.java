@@ -33,6 +33,7 @@ public class ProfessorController {
 
     @PostMapping
     public Professor criar(@RequestBody Professor professor) {
+        professor.setSaldoMoedas(1000);
         return professorRepository.save(professor);
     }
 

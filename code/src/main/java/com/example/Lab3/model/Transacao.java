@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 public class Transacao {
 
@@ -15,9 +18,11 @@ public class Transacao {
     private Long id;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Professor professor;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Aluno aluno;
 
     private int quantidade;
