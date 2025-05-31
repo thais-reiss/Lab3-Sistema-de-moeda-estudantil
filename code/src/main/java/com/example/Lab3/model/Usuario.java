@@ -2,6 +2,8 @@ package com.example.Lab3.model;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,6 +46,7 @@ public abstract class Usuario {
         this.email = email;
     }
 
+    @JsonIgnore
     public String getSenha() {
         return senha;
     }
