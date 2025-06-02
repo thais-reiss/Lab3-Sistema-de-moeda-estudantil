@@ -1,5 +1,13 @@
 {
     "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Lab3Application",
+            "request": "launch",
+            "mainClass": "Lab3Application",
+            "projectName": "Lab3"
+        },
         {
             "type": "java",
             "name": "Spring Boot-Lab3Application<Lab3>",
