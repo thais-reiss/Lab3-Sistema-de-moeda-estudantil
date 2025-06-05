@@ -1,14 +1,16 @@
 package com.example.Lab3.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Transacao {
@@ -24,6 +26,10 @@ public class Transacao {
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Aluno aluno;
+
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 
     private int quantidade;
     private String motivo;
@@ -76,5 +82,13 @@ public class Transacao {
 
     public void setData(LocalDateTime data) {
         this.data = data;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 }
