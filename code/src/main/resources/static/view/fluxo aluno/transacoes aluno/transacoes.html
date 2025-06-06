@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extrato</title>
-    <link rel="stylesheet" href="extrato.css">
+    <title>Transações</title>
+    <link rel="stylesheet" href="transacoes.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 </head>
@@ -32,7 +32,7 @@
             </li>
 
             <li class="item-menu">
-                <a href="./extrato.html">
+                <a href="../extrato aluno/extrato.html">
                     <span class="icon"><i class="bi bi-receipt"></i></span>
                     <span class="txt-link">Extrato</span>
                 </a>
@@ -45,8 +45,8 @@
                 </a>
             </li>
 
-                 <li class="item-menu">
-                <a href="../transacoes aluno/transacoes.html">
+             <li class="item-menu">
+                <a href="./transacoes.html">
                     <span class="icon"><i class="bi bi-arrow-down-up"></i></span>
                     <span class="txt-link">Transações</span>
                 </a>
@@ -61,48 +61,39 @@
 
         </ul>
     </nav>
+    <div class="titulo">
+        <h1>Transações</h1>
+    </div>
 
+    <div class="card-container">
 
-
-    <div class="principal">
-
-        <div class="img">
-            <img src="../../../imgs/extrato.svg" alt="Users">
+        <!--CARD DE RECEBIMENTO DE MOEDAS-->
+        <div class="card">
+            <div>
+                <p class="recebimento"><strong>Recebimento:</strong></p>
+                <p><strong>Data: </strong>05/06/2025</p>
+                <p><strong>Professor: </strong>Hugo</p>
+                <p><strong>Aluno: </strong>Bárbara Kawany</p>
+                <p><strong>Motivo: </strong>Muito estudiosa, sempre presta atenção nas minhas aulas.</p>
+                <p><strong>Quantidade: </strong> 100 moedas</p>
+            </div>
         </div>
 
-        <div class="extrato-container">
-            <div class="titulo">
-                <h1>Extrato</h1>
+        <!--CARD DE GASTO DE MOEDAS-->
+        <div class="card">
+            <div>
+                <p class="gasto"><strong>Gasto:</strong></p>
+                <p><strong>Data: </strong>05/06/2025</p>
+                <p><strong>Código: </strong>1234567890</p>
+                <p><strong>Aluno: </strong>Bárbara Kawany</p>
+                <p><strong>Empresa: </strong>Petz</p>
+                <p><strong>Vantagem: </strong>Roupinha para pastor alemão</p>
+                <p><strong>Custo: </strong>30 Moedas</p>
             </div>
+        </div>
 
-            <div class="extrato-info">
-                <div class="linha-extrato">
-                    <div class="descricao">
-                        <i class="bi bi-plus-circle icone-recebido"></i>
-                        <span><strong>Recebido:</strong></span>
-                    </div>
-                    <div class="valor" id="valor-recebido">0 moedas</div>
-                </div>
-                <div class="linha-extrato">
-                    <div class="descricao">
-                        <i class="bi bi-dash-circle icone-gasto"></i>
-                        <span><strong>Gasto:</strong></span>
-                    </div>
-                    <div class="valor" id="valor-gasto">0 moedas</div>
-                </div>
-            </div>
-
-            <div class="saldo-final">
-                <hr>
-                <div class="linha-extrato">
-                    <div class="descricao">
-                        <i class="bi bi-coin icone-saldo"></i>
-                        <span><strong>Saldo atual:</strong></span>
-                    </div>
-                    <div class="valor" id="valor-saldo">0 moedas</div>
-                </div>
-            </div>
-            <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
