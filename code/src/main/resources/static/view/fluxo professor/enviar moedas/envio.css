@@ -249,4 +249,13 @@ ul li.item-menu a .icon > i {
     font-size: 14px;
 }
 
-
+.saldo {
+   position: absolute;
+   top: 100px;
+   right: 40px;
+   background-color: rgb(143, 150, 248);
+   padding: 10px 20px;
+   border-radius: 10px;
+   font-size: 18px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

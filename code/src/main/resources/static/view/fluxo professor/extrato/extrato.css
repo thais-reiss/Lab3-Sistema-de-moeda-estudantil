@@ -141,7 +141,56 @@ ul li.item-menu a .icon > i {
     color: red;
  }
 
- 
+
 .icone-saldo {
     color: #b6aa00; 
 }
+
+.titulo-transacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 20px; 
+}
+
+.card p {
+    margin-top: 7px;
+}
+
+.recebimento {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    font-size: 1.2em; 
+    margin-bottom: 10px;
+}
+
+.envio {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 1.2em; 
+    margin-bottom: 10px;
+}
+
