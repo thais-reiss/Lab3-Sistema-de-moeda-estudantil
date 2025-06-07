@@ -125,48 +125,31 @@ ul li.item-menu a .icon > i {
     gap: 10px; 
     margin-top: 15px;
 }
+
 .acoes button {
-    border: none;
-    background: none;
-    cursor: pointer;
+    width: 627px;
     padding: 10px 12px;
     margin: 0 5px;
+    font-size: 20px;
+    background-color: #6a00ff;
     border-radius: 5px;
-    transition: all 0.3s;
-    font-size: 16px;
+    border: none;
+    color:white;
+    transition: all 0.2s;
 }
 
-.acoes button .editar, .excluir {
-    font-size: 20px;
-    align-items: center;
-    justify-content: center;
+.acoes button:hover {
+    cursor: pointer;
+    background-color: rgb(143, 150, 248); 
 }
 
-
-.editar:hover, .excluir:hover {
-    transform: scale(1.05);
+.saldo {
+   position: absolute;
+   top: 100px;
+   right: 40px;
+   background-color: rgb(143, 150, 248);
+   padding: 10px 20px;
+   border-radius: 10px;
+   font-size: 18px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.editar {
-    color: #2e7d32;
-    display: flex;
-}
-
-.editar:hover {
-    background-color: #2e7d32;
-    color: white;
-}
-
-.excluir {
-    color: #c62828;
-}
-
-.excluir:hover {
-    background-color: #c62828;
-    color: white;
-}
-
-.acoes button .icon {
-    font-size: 20px;
-}
-

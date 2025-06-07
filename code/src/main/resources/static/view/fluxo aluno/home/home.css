@@ -96,28 +96,36 @@ ul li.item-menu a .icon > i {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 25px;
+    padding: 15px;
     margin-bottom: 20px; 
 }
 
-.card p {
-    margin-top: 7px;
-}
-
-.recebimento {
-    text-align: center;
-    color: green;
-    font-weight: bold;
-    font-size: 1.2em; 
+.img-card {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.gasto {
-    text-align: center;
-    color: red;
-    font-weight: bold;
-    font-size: 1.2em; 
-    margin-bottom: 10px;
+.img-card img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
 }
 
+.card div:not(.img-card) {
+    margin: 10px 0;
+}
 
+.saldo {
+   position: absolute;
+   top: 100px;
+   right: 40px;
+   background-color: rgb(143, 150, 248);
+   padding: 10px 20px;
+   border-radius: 10px;
+   font-size: 18px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
