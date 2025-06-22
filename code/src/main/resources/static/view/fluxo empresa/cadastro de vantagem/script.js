@@ -1,3 +1,5 @@
+import {isValidName, isValidCusto, isValidFoto, isValidDescricao} from './validações/validacoes.js'
+
 document.addEventListener('DOMContentLoaded', async () => {
     const idEmpresa = Number(localStorage.getItem('idEmpresa'));
 
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const foto = document.getElementById('foto').value.trim();
         const descricao = document.getElementById('descricao').value.trim();
 
-        if (!isValidNome(nome)) return;
+        if (!isValidName(nome)) return;
         if (!isValidCusto(custo)) return;
         if (!isValidFoto(foto)) return;
         if (!isValidDescricao(descricao)) return;
@@ -58,43 +60,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 });
-
-function isValidNome(nome) {
-    const regex = /^[a-zA-ZÀ-ÿ\s]+$/;
-    if (!regex.test(nome) || nome.length < 3) {
-        alert('O nome deve ter mínimo de 3 letras.😊');
-        return false;
-    }
-    return true;
-}
-
-function isValidCusto(custo) {
-    if (!Number.isInteger(custo) || custo <= 0) {
-        alert('O custo da vantagem deve ser inteiro e positivo.😊');
-        return false;
-    }
-    return true;
-}
-
-function isValidFoto(foto) {
-    try {
-        const url = new URL(foto);
-        const pathname = url.pathname.toLowerCase();
-        if (!(/\.(jpe?g|png|gif|bmp|svg|webp)$/i).test(pathname)) {
-            alert('A URL não termina em uma extensão de imagem válida.😊');
-            return false;
-        }
-        return true;
-    } catch (_) {
-        alert('A URL da foto não é válida.😊');
-        return false;
-    }
-}
-
-function isValidDescricao(descricao) {
-    if (descricao.length < 5) {
-        alert('A descrição deve ter o mínimo de 5 caracteres.😊');
-        return false;
-    }
-    return true;
-}

@@ -1,3 +1,5 @@
+import {isValidName, isValidCNPJ, isValidEmail, isValidSenha} from './validações/validacoes.js'
+
 document.addEventListener('DOMContentLoaded', async () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', async (event) => {
@@ -44,37 +46,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
-function isValidName(nome) {
-    const regex = /^[a-zA-ZÀ-ÿ\s]+$/;
-    if (!regex.test(nome) || nome.length < 3) {
-        alert('O nome deve ter mínimo de 3 letras.😊');
-        return false;
-    }
-    return true;
-}
-
-function isValidCNPJ(cnpj) {
-    const regex = /^[0-9]{14}$/;
-    if (!regex.test(cnpj)) {
-        alert('O CNPJ deve conter exatamente 14 números.😊');
-        return false;
-    }
-    return true;
-}
-
-function isValidEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regex.test(email)) {
-        alert('O e-mail é inválido. Informe um formato como empresa@email.com.😊');
-        return false;
-    }
-    return true;
-}
-
-function isValidSenha(senha) {
-    if (senha.length < 4) {
-        alert('A senha deve ter mínimo de 4 caracteres.😊');
-        return false;
-    }
-    return true;
-}
