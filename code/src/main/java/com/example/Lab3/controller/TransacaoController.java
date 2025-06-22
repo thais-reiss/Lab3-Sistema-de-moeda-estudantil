@@ -25,6 +25,7 @@ import com.example.Lab3.repository.AlunoRepository;
 import com.example.Lab3.repository.ProfessorRepository;
 import com.example.Lab3.repository.TransacaoRepository;
 import com.example.Lab3.repository.VantagemRepository;
+import com.example.Lab3.service.EmailService;
 
 @RestController
 @RequestMapping("/transacoes")
@@ -35,17 +36,20 @@ public class TransacaoController {
     private final AlunoRepository alunoRepository;
     private final JavaMailSender mailSender;
     private final VantagemRepository vantagemRepository;
+    private final EmailService emailService;
 
     public TransacaoController(TransacaoRepository transacaoRepository,
             ProfessorRepository professorRepository,
             AlunoRepository alunoRepository,
             VantagemRepository vantagemRepository,
-            JavaMailSender mailSender) {
+            JavaMailSender mailSender,
+            EmailService emailService) {
         this.transacaoRepository = transacaoRepository;
         this.professorRepository = professorRepository;
         this.alunoRepository = alunoRepository;
         this.mailSender = mailSender;
         this.vantagemRepository = vantagemRepository;
+        this.emailService = emailService;
     }
 
     @PostMapping("/enviar-moedas")
@@ -88,34 +92,13 @@ public class TransacaoController {
         transacaoRepository.save(novaTransacao);
 
         // Enviar email de notificação (implementação direta)
-        enviarEmailNotificacao(aluno, professor, novaTransacao);
+        emailService.enviarNotificacaoEnvioMoedas(aluno, professor, novaTransacao);
 
         return ResponseEntity.ok(novaTransacao);
     }
 
     @Value("${spring.mail.from}")
     private String remetenteEmail;
-
-    private void enviarEmailNotificacao(Aluno aluno, Professor professor, Transacao transacao) {
-        try {
-            SimpleMailMessage email = new SimpleMailMessage();
-            email.setFrom("testemoedas454@gmail.com"); // <- Fix: remetente explícito
-            email.setTo(aluno.getEmail());
-            email.setSubject("Você recebeu moedas!");
-            email.setText(String.format(
-                    "Olá %s,\n\nVocê recebeu %d moedas do professor %s.\nMotivo: %s",
-                    aluno.getNome(),
-                    transacao.getQuantidade(),
-                    professor.getNome(),
-                    transacao.getMotivo()
-            ));
-            mailSender.send(email);
-            System.out.println("Email enviado com sucesso para " + aluno.getEmail());
-        } catch (MailException ex) {
-            System.err.println("Erro ao enviar e-mail: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-    }
 
     @GetMapping
     public List<TransacaoDTO> listarTransacoes() {

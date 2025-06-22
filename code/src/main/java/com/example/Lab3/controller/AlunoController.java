@@ -27,6 +27,7 @@ import com.example.Lab3.model.Vantagem;
 import com.example.Lab3.repository.AlunoRepository;
 import com.example.Lab3.repository.TransacaoRepository;
 import com.example.Lab3.repository.VantagemRepository;
+import com.example.Lab3.service.EmailService;
 
 import jakarta.transaction.Transactional;
 
@@ -38,15 +39,25 @@ public class AlunoController {
     private final VantagemRepository vantagemRepository;
     private final TransacaoRepository transacaoRepository;
     private final JavaMailSender mailSender;
+    private final EmailService emailService;
 
     public AlunoController(AlunoRepository alunoRepository,
             VantagemRepository vantagemRepository,
             TransacaoRepository transacaoRepository,
             JavaMailSender mailSender) {
+        this(alunoRepository, vantagemRepository, transacaoRepository, mailSender, null);
+    }
+
+    public AlunoController(AlunoRepository alunoRepository,
+            VantagemRepository vantagemRepository,
+            TransacaoRepository transacaoRepository,
+            JavaMailSender mailSender,
+            EmailService emailService) {
         this.alunoRepository = alunoRepository;
         this.vantagemRepository = vantagemRepository;
         this.transacaoRepository = transacaoRepository;
         this.mailSender = mailSender;
+        this.emailService = emailService;
     }
 
     @GetMapping
@@ -141,7 +152,7 @@ public class AlunoController {
 
         Transacao transacaoSalva = transacaoRepository.save(transacao);
 
-        enviarCupomEmail(aluno, empresa, vantagem, transacaoSalva.getCodigo(), transacaoSalva.getId());
+        emailService.enviarCupomEmail(aluno, empresa, vantagem, transacaoSalva.getCodigo(), transacaoSalva.getId());
 
         Map<String, Object> response = new HashMap<>();
         response.put("mensagem", "Vantagem resgatada com sucesso. Cupom enviado por email.");
@@ -150,37 +161,6 @@ public class AlunoController {
         response.put("vantagem", vantagem.getNome());
 
         return ResponseEntity.ok(response);
-    }
-
-    private void enviarCupomEmail(Aluno aluno, Empresa empresa, Vantagem vantagem, Long codigoCupom, Long transacaoId) {
-        try {
-            System.out.println("Tentando enviar email para: " + aluno.getEmail());
-
-            SimpleMailMessage emailAluno = new SimpleMailMessage();
-            emailAluno.setFrom("testemoedas454@gmail.com");
-            emailAluno.setTo(aluno.getEmail());
-            emailAluno.setSubject("Cupom de vantagem - " + vantagem.getNome());
-            emailAluno.setText(String.format(
-                    "Olá %s,\n\nVocê resgatou: %s\nCódigo do cupom: %d\nID da transação: %d",
-                    aluno.getNome(), vantagem.getNome(), codigoCupom, transacaoId
-            ));
-            mailSender.send(emailAluno);
-
-            SimpleMailMessage emailEmpresa = new SimpleMailMessage();
-            emailEmpresa.setFrom("testemoedas454@gmail.com");
-            emailEmpresa.setTo(empresa.getEmail());
-            emailEmpresa.setSubject("Resgate de vantagem - " + vantagem.getNome());
-            emailEmpresa.setText(String.format(
-                    "Olá %s,\n\nO aluno %s resgatou: %s\nCódigo do cupom: %d\nID da transação: %d",
-                    empresa.getNome(), aluno.getNome(), vantagem.getNome(), codigoCupom, transacaoId
-            ));
-            mailSender.send(emailEmpresa);
-
-            System.out.println("Emails de resgate enviados com sucesso.");
-        } catch (MailException e) {
-            System.err.println("ERRO AO ENVIAR EMAIL DE RESGATE: ");
-            e.printStackTrace();
-        }
     }
 
 }
