@@ -1,5 +1,5 @@
 # Nome do projeto
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+Sistema de bonificação dos alunos pelos professores, através do fornecimento de moedas que podem ser trocadas por benefícios em empresas parceiras.
 
 ## Integrantes
 * Bárbara Kawany Gonçalves Nunes Carvalho
@@ -9,5 +9,4 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 ## Orientadores
 * Cleiton Silva Tavares
 
-## Instruções de utilização
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+
