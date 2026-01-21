@@ -1,4 +1,4 @@
-# Nome do projeto
+# Sistema de moeda estudantil
 Sistema de bonificação dos alunos pelos professores, através do fornecimento de moedas que podem ser trocadas por benefícios em empresas parceiras.
 
 ## Integrantes
